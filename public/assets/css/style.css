@@ -1,0 +1,314 @@
+/* General */
+.top-0 {
+    top: 0 !important;
+}
+.top-100 {
+    top: 100% !important;
+}
+.bottom-0 {
+    bottom: 0 !important;
+}
+.bottom-100 {
+    bottom: 100% !important;
+}
+.left-0 {
+    left: 0 !important;
+}
+.left-100 {
+    left: 100% !important;
+}
+.right-0 {
+    right: 0 !important;
+}
+.right-100 {
+    right: 100% !important;
+}
+
+/*bootstrap extend*/
+.fw-100 {
+    font-weight: 100 !important;
+}
+.fw-200 {
+    font-weight: 200 !important;
+}
+.fw-300 {
+    font-weight: 300 !important;
+}
+.fw-400 {
+    font-weight: 400 !important;
+}
+.fw-500 {
+    font-weight: 500 !important;
+}
+.fw-600 {
+    font-weight: 600 !important;
+}
+.fw-700 {
+    font-weight: 700 !important;
+}
+.fw-800 {
+    font-weight: 800 !important;
+}
+.fw-900 {
+    font-weight: 900 !important;
+}
+
+.fs-8 {
+    font-size: 0.5rem !important;
+}
+.fs-9 {
+    font-size: 0.5625rem !important;
+}
+.fs-10 {
+    font-size: 0.625rem !important;
+}
+.fs-11 {
+    font-size: 0.6875rem !important;
+}
+.fs-12 {
+    font-size: 0.75rem !important;
+}
+.fs-13 {
+    font-size: 0.8125rem !important;
+}
+.fs-14 {
+    font-size: 0.875rem !important;
+}
+.fs-15 {
+    font-size: 0.9375rem !important;
+}
+.fs-15 {
+    font-size: 0.9375rem !important;
+}
+.fs-16 {
+    font-size: 1rem !important;
+}
+.fs-17 {
+    font-size: 1.0625rem !important;
+}
+.fs-18 {
+    font-size: 1.125rem !important;
+}
+.fs-19 {
+    font-size: 1.1875rem !important;
+}
+.fs-20 {
+    font-size: 1.25rem !important;
+}
+.fs-21 {
+    font-size: 1.3125rem !important;
+}
+.fs-22 {
+    font-size: 1.375rem !important;
+}
+.fs-23 {
+    font-size: 1.4375rem !important;
+}
+.fs-24 {
+    font-size: 1.5rem !important;
+}
+.pc {
+    color: aquamarine !important;
+}
+.sc {
+    color: rgb(14, 50, 83) !important;
+}
+.tc {
+    color: rgb(26, 26, 26) !important;
+}
+.btnc{
+    background-color: rgb(14, 50, 83) !important;
+    color: rgb(255, 255, 255) !important;
+}
+
+/* Login */
+#login .container #login-row #login-column #login-box {
+    margin-top: 100px;
+    max-width: 600px;
+    height: 380px;
+    background-color: #eaeaea;
+}
+#login .container #login-row #login-column #login-box #login-form {
+    padding: 20px;
+}
+
+/* Registration */
+#registration
+    .container
+    #registration-row
+    #registration-column
+    #registration-box {
+    margin-top: 50px;
+    max-width: 600px;
+    height: 550px;
+    background-color: #eaeaea;
+}
+#registration
+    .container
+    #registration-row
+    #registration-column
+    #registration-box
+    #registration-form {
+    padding: 20px;
+}
+
+/* Home page */
+.navbar{
+    background-color: rgb(14, 50, 83) !important;
+}
+
+
+/* Footer */
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+section {
+    padding: 30px 0;
+}
+
+section .section-title {
+    text-align: left;
+    color: rgb(14, 50, 83);
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+#footer {
+    background: rgb(14, 50, 83) !important;
+}
+#footer h5{
+	padding-left: 10px;
+    border-left: 3px solid #eeeeee;
+    padding-bottom: 6px;
+    margin-bottom: 20px;
+    color:#ffffff;
+}
+#footer a {
+    color: #ffffff;
+    text-decoration: none !important;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+#footer ul.social li{
+	padding: 3px 0;
+}
+#footer ul.social li a i {
+    margin-right: 5px;
+	font-size:25px;
+	-webkit-transition: .5s all ease;
+	-moz-transition: .5s all ease;
+	transition: .5s all ease;
+}
+#footer ul.social li:hover a i {
+	font-size:30px;
+	margin-top:-10px;
+}
+#footer ul.social li a,
+#footer ul.quick-links li a{
+	color:#ffffff;
+}
+#footer ul.social li a:hover{
+	color:#eeeeee;
+}
+#footer ul.quick-links li{
+	padding: 3px 0;
+	-webkit-transition: .5s all ease;
+	-moz-transition: .5s all ease;
+	transition: .5s all ease;
+}
+#footer ul.quick-links li:hover{
+	padding: 3px 0;
+	margin-left:5px;
+	font-weight:700;
+}
+#footer ul.quick-links li a i{
+	margin-right: 5px;
+}
+#footer ul.quick-links li:hover a i {
+    font-weight: 700;
+}
+
+@media (max-width:767px){
+	#footer h5 {
+    padding-left: 0;
+    border-left: transparent;
+    padding-bottom: 0px;
+    margin-bottom: 10px;
+}
+}
+
+/* cart */
+
+.left-meni{
+    float:left;
+    width:65%;
+    
+   
+   }
+   .left-meni h5 {
+       font-weight: 500;
+      font-size: 17px;
+   }
+   .right-meni{
+    float:left;
+    width:35%;
+   
+   }
+   .right-meni h5 {
+       font-weight: 500;
+      font-size: 16px;
+   }
+   .clear{
+   clear:both;
+   }
+   .myborder-right {
+      border: 1px solid #ccc;
+       padding: 17px 11px;
+       min-height: 143px;
+       overflow: hidden;
+       margin: 10px 0px;
+       border-radius:4px;
+   }
+   .menu-tabu{
+   margin: 20px 0px;
+   }
+   .menu-tabu thead {
+       background-color:rgb(14, 50, 83);
+       color: #fff;
+           
+   }
+   .my-hr{
+       height: -1px;
+       background-color: rgb(14, 50, 83);
+       padding: 1px;
+   }
+   .btwa{
+   margin-top:30px;
+   }
+   .rmovawa {
+       width: 60px;
+       height: 60px;
+      
+       background-color :#666 ;
+       background-color: #827f7f;
+       padding: 5px;
+       color: #fff;
+       cursor: pointer;
+   } 
+   .payment-meth li{
+    list-style:none;
+    display: inline-block;
+    margin:10px 0px;
+   }
+   .payment-meth img{
+        display: inline-block;
+       height: 70px;
+       width:75px;
+       margin: 1px 16px;
+   }
+   @media only screen and (max-width: 600px) {
+   .payment-meth img{
+     height: 50px;
+       width: 55px;
+       margin: 1px 5px;
+   }
+   }
+
+   /* dashbord */
