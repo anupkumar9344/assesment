@@ -41,40 +41,47 @@
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <form action="" method="post">
+                                <form action="product" method="post" enctype="multipart/form-data" accept-charset="UTF-8">
+                                    @csrf
+                                    {{-- {{method_field('POST')}} --}}
                                     <div class="form-group">
                                         <label for="name" class="tc">Name</label><br>
-                                        <input type="name" name="name" id="username" class="form-control">
+                                        <input type="name" name="p_name" id="username" class="form-control">
                                     </div>
                                     <div class="form-group mt-2">
                                         <label for="cat" class="tc">Category</label><br>
-                                        <select class="form-select" aria-label="Default select example">
-                                            <option selected>Select Category</option>
-                                            <option value="1">One</option>
-                                            <option value="2">Two</option>
-                                            <option value="3">Three</option>
+                                        <select name = 'cat_id'class="form-select" id="cat_id" aria-label="Default select example">
+                                            <option disabled selected>Select Category</option>
+                                            {{-- @foreach ($category as $cat)
+                                                <option value="{{ $cat->id }}">{{ $cat->name }}</option>
+                                            @endforeach --}}
+                                            <option name='cat_id' value="1">abcd</option>
+
+
                                         </select>
                                     </div>
                                     <div class="form-group mt-2">
                                         <label for="dis" class="tc">Discription</label><br>
                                         {{-- <input type="text" name="" id="" class="form-control"> --}}
-                                        <textarea type="text" name="" id="" rows="3" class="form-control"></textarea>
+                                        <textarea type="text" name="p_discription" id="" rows="3"
+                                            class="form-control"></textarea>
                                     </div>
                                     <div class="form-group mt-2">
                                         <label for="price" class="tc">Price</label><br>
-                                        <input type="text" name="" id="" class="form-control">
+                                        <input type="text" name="price" id="" class="form-control">
                                     </div>
                                     <div class="form-group mt-2">
-                                        <label for="price" class="tc">Image</label><br>
-                                        <input type="file" name="" id="" class="form-control">
+                                        <label for="image" class="tc">Image</label><br>
+                                        <input type="file" name="p_image" id="" class="form-control">
                                     </div>
-
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btnc">Add</button>
+                                    </div>
                                 </form>
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -91,18 +98,19 @@
                         <th scope="col">Details</th>
                         <th scope="col">Update</th>
                         <th scope="col">Delete</th>
-
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($products as $product)
+                        
                     <tr>
-                        <th scope="row">1</th>
-                        <td><img width="20" height="20"
-                                src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" alt=""></td>
-                        <td>Otto</td>
-                        <td>Category</td>
-                        <td>@mdo</td>
-                        <td><button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                        <th scope="row">{{$product['id']}}</th>
+                        <td><img style="border-radius: 50px;" width="30" height="30"
+                                src="{{asset('uploads/products/'.$product->p_image)}}" alt=""></td>
+                        <td>{{$product['p_name']}}</td>
+                        <td>{{$product['cat_id']}}</td>
+                        <td>{{$product['p_discription']}}</td>
+                        <td><button type="button" class="btn btnc" data-bs-toggle="modal"
                                 data-bs-target="#exampleModal">
                                 edit
                             </button></td>
@@ -147,8 +155,10 @@
                                 </div>
                             </div>
                         </div>
-                        <td>delete</td>
+                        <td><a class="btn btnc" href="{{ 'delete/' . $product['id'] }}">delete</a></td>
+
                     </tr>
+                    @endforeach
 
                 </tbody>
             </table>

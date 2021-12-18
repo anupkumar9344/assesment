@@ -12,7 +12,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"
+        integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
     <style>
         .carousel-inner .carousel-item img {
             width: 100%;
@@ -28,17 +30,16 @@
             }
         }
 
-
     </style>
 </head>
 
 <body>
     <x-header />
-   
+
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
                 aria-label="Slide 2"></button>
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
@@ -71,115 +72,26 @@
     </div>
 
     <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-4 mb-5">
-                <ul class="list-group border-0">
-                    <li class="list-group-item disabled text-center" aria-disabled="true">All Category</li>
-                    <li class="list-group-item">Category1</li>
-                    <li class="list-group-item">Category2</li>
-                    <li class="list-group-item">Category3</li>
-                    <ul>
-                        <li class="list-group-item">A third item</li>
-                        <li class="list-group-item">A fourth item</li>
-                    </ul>
-                    <li class="list-group-item">Category4</li>
-                </ul>
-            </div>
-            <div class="col-md-8 mb-5">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card" style="width: 18rem;">
-                            <img src="https://images.unsplash.com/photo-1493723843671-1d655e66ac1c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-                                class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title fs-16 fw-600">Product Name</h5>
-                                <p class="card-text fs-14">Some quick example text </p>
-                                <span class="card-text fs-14">Rs: 400</span>
-                                <a style="float: right;" href="#" class="btn btnc">Add to cart</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card" style="width: 18rem;">
-                            <img src="https://images.unsplash.com/photo-1493723843671-1d655e66ac1c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-                                class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title fs-16 fw-600">Product Name</h5>
-                                <p class="card-text fs-14">Some quick example text </p>
-                                <span class="card-text fs-14">Rs: 400</span>
-                                <a style="float: right;" href="#" class="btn btnc">Add to cart</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card" style="width: 18rem;">
-                            <img src="https://images.unsplash.com/photo-1493723843671-1d655e66ac1c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-                                class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title fs-16 fw-600">Product Name</h5>
-                                <p class="card-text fs-14">Some quick example text </p>
-                                <span class="card-text fs-14">Rs: 400</span>
-                                <a style="float: right;" href="#" class="btn btnc">Add to cart</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
         <div class="row mb-5">
             <div class="title">
-                <h4 class="sc">Featured Products</h4>
-                <p class="tc">About featured product</p>
+                <h4 class="sc">All Category</h4>
             </div>
             <div class="row">
-                <div class="col-md-3">
-                    <div class="card" style="width: 18rem;">
-                        <img src="https://images.unsplash.com/photo-1493723843671-1d655e66ac1c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-                            class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title fs-16 fw-600">Product Name</h5>
-                            <p class="card-text fs-14">Some quick example text </p>
-                            <span class="card-text fs-14">Rs: 400</span>
-                            <a style="float: right;" href="#" class="btn btnc">Add to cart</a>
-                        </div>
-                    </div> 
-                </div>
-                <div class="col-md-3">
-                    <div class="card" style="width: 18rem;">
-                        <img src="https://images.unsplash.com/photo-1493723843671-1d655e66ac1c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-                            class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title fs-16 fw-600">Product Name</h5>
-                            <p class="card-text fs-14">Some quick example text </p>
-                            <span class="card-text fs-14">Rs: 400</span>
-                            <a style="float: right;" href="#" class="btn btnc">Add to cart</a>
-                        </div>
-                    </div> 
-                </div>
-                <div class="col-md-3">
-                    <div class="card" style="width: 18rem;">
-                        <img src="https://images.unsplash.com/photo-1493723843671-1d655e66ac1c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-                            class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title fs-16 fw-600">Product Name</h5>
-                            <p class="card-text fs-14">Some quick example text </p>
-                            <span class="card-text fs-14">Rs: 400</span>
-                            <a style="float: right;" href="#" class="btn btnc">Add to cart</a>
-                        </div>
-                    </div> 
-                </div>
-                <div class="col-md-3">
-                    <div class="card" style="width: 18rem;">
-                        <img src="https://images.unsplash.com/photo-1493723843671-1d655e66ac1c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-                            class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title fs-16 fw-600">Product Name</h5>
-                            <p class="card-text fs-14">Some quick example text </p>
-                            <span class="card-text fs-14">Rs: 400</span>
-                            <a style="float: right;" href="#" class="btn btnc">Add to cart</a>
-                        </div>
-                    </div> 
-                </div>
+                @foreach ($category as $cat)
+                    <div class="col-md-3 mb-4">
+                        <div class="card" style="width: 18rem;">
+                            <img style="height: 200px;" src="{{asset('uploads/category/'.$cat->cat_image)}}"
+                                class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title fs-16 fw-600">{{$cat['cat_name']}}</h5>
+                                <p class="card-text fs-14">{{$cat['cat_discription']}}</p>
+
+                        <a style="float: right;" href="product" class="btn btnc">View Product</a>
+                            </div>
+                        </div>                    
+                    </div>
+                    @endforeach 
             </div>
         </div>
     </div>

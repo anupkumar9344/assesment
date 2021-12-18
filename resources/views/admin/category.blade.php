@@ -11,7 +11,7 @@
     <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"
         integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
@@ -24,7 +24,7 @@
     <div class="container">
         <div class="row mt-2">
             <div class="col-6">
-                <h4>Products</h4>
+                <h4>Category</h4>
             </div>
             <div class="col-6">
                 <span style="float: right;"><button type="button" class="btn btn-primary" data-bs-toggle="modal"
@@ -41,28 +41,31 @@
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <form action="" method="post">
+                                <form action="category" method="post" enctype="multipart/form-data">
+                                    @csrf
                                     <div class="form-group">
                                         <label for="name" class="tc">Name</label><br>
-                                        <input type="name" name="name" id="username" class="form-control">
+                                        <input type="name" name="cat_name" id="username" class="form-control">
                                     </div>
                                     <div class="form-group mt-2">
                                         <label for="dis" class="tc">Discription</label><br>
                                         {{-- <input type="text" name="" id="" class="form-control"> --}}
-                                        <textarea type="text" name="" id="" rows="3" class="form-control"></textarea>
-                                    </div>
-                                
-                                    <div class="form-group mt-2">
-                                        <label for="price" class="tc">Image</label><br>
-                                        <input type="file" name="" id="" class="form-control">
+                                        <textarea type="text" name="cat_discription" id="" rows="3"
+                                            class="form-control"></textarea>
                                     </div>
 
+                                    <div class="form-group mt-2">
+                                        <label for="price" class="tc">Image</label><br>
+                                        <input type="file" name="cat_image" id="" class="form-control">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btnc">Add</button>
+                                    </div>
                                 </form>
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -82,48 +85,53 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td><img width="20" height="20" src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg" alt=""></td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td><button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal">
-                            edit
-                        </button></td>
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form action="" method="post">
-                                            <div class="form-group">
-                                                <label for="name" class="tc">Name</label><br>
-                                                <input type="name" name="name" id="username" class="form-control">
-                                            </div>
-                                            <div class="form-group mt-2">
-                                                <label for="dis" class="tc">Discription</label><br>
-                                                {{-- <input type="text" name="" id="" class="form-control"> --}}
-                                                <textarea type="text" name="" id="" rows="3"
-                                                    class="form-control"></textarea>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-bs-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
+                    @foreach ($category as $cat)
+
+                        <tr>
+                            <th scope="row">{{ $cat['id'] }}</th>
+                            <td><img style="border-radius: 50px;" width="30" height="30"
+                                    src="{{asset('uploads/category/'.$cat->cat_image)}}" alt="">
+                            </td>
+                            <td>{{ $cat['cat_name'] }}</td>
+                            <td>{{ $cat['cat_discription'] }}</td>
+                            <td><button type="button" class="btn btnc" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">
+                                    edit
+                                </button></td>
+                            <div class="modal fade" id="exampleModal" tabindex="-1"
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form action="" method="post">
+                                                <div class="form-group">
+                                                    <label for="name" class="tc">Name</label><br>
+                                                    <input type="name" name="name" id="username" class="form-control">
+                                                </div>
+                                                <div class="form-group mt-2">
+                                                    <label for="dis" class="tc">Discription</label><br>
+                                                    {{-- <input type="text" name="" id="" class="form-control"> --}}
+                                                    <textarea type="text" name="" id="" rows="3"
+                                                        class="form-control"></textarea>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btnc"
+                                                        data-bs-dismiss="modal">Close</button>
+                                                    <button type="submit" class="btn btnc">Save changes</button>
+                                                </div>
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <td>delete</td>
-                    </tr>
+                            <td><a class="btn btnc" href="{{ 'delete/' . $cat['id'] }}">delete</a></td>
+                        </tr>
+                    @endforeach
 
                 </tbody>
             </table>

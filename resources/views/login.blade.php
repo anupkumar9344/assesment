@@ -19,7 +19,7 @@
                     <div id="login-box" class="col-md-12">
                         <form id="login-form" class="form" action="{{url('login')}}" method="post">
                             @csrf
-                            <h3 class="text-center tc mt-2">User Login</h3>
+                            <h3 class="text-center tc mt-2 mb-3">Login</h3>
                             <div class="form-group">
                                 <label for="username" class="tc">Username(Email):</label><br>
                                 <input type="email" name="email" id="username" class="form-control">

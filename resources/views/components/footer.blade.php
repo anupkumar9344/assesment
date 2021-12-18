@@ -21,8 +21,8 @@
 <!-- Footer -->
 	<section id="footer">
 		<div class="container">
-			<div class="row">
-				<div class="col-6 col-sm-4 col-md-4">
+			<div class="row mt-5">
+				<div class="col-12 col-sm-4 col-md-4 mb-4">
 					<h5>About Us</h5>
 					<ul class="list-unstyled quick-links">
 						<a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique expedita harum ut vel! Consequatur est id libero quam. Velit reprehenderit corrupti magni quidem itaque maiores illum ipsa iusto eos doloremque.</a>
@@ -33,20 +33,20 @@
 					<h5>Links</h5>
 					<ul class="list-unstyled quick-links">
 						<li><a href="#"><i class="fa fa-angle-double-right"></i>Home</a></li>
+						<li><a href="#"><i class="fa fa-angle-double-right"></i>My Cart</a></li>
 						<li><a href="#"><i class="fa fa-angle-double-right"></i>About</a></li>
-						<li><a href="#"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
-						<li><a href="#"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
-						<li><a href="#"><i class="fa fa-angle-double-right"></i>Videos</a></li>
+						<li><a href="#"><i class="fa fa-angle-double-right"></i>Contact</a></li>
+						<li><a href="#"><i class="fa fa-angle-double-right"></i>Logout</a></li>
 					</ul>
 				</div>
 				<div class="col-6 col-sm-4 col-md-4">
 					<h5>Contact</h5>
 					<ul class="list-unstyled quick-links">
-						<li><a href="#"><i class="fa fa-angle-double-right"></i>Home</a></li>
-						<li><a href="#"><i class="fa fa-angle-double-right"></i>About</a></li>
-						<li><a href="#"><i class="fa fa-angle-double-right"></i>FAQ</a></li>
-						<li><a href="#"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
-						<li><a href="https://wwwe.sunlimetech.com" title="Design and developed by"><i class="fa fa-angle-double-right"></i>Imprint</a></li>
+						<li><a href="#"><i class="fa fa-angle-double-right"></i>+91 9090909090</a></li>
+						<li><a href="#"><i class="fa fa-angle-double-right"></i>+91 9090909090</a></li>
+						<li><a href="#"><i class="fa fa-angle-double-right"></i>info@gmail.com</a></li>
+						<li><a href="#"><i class="fa fa-angle-double-right"></i>Bhopal, Madhya Pradesh, India</a></li>
+
 					</ul>
 				</div>
 			</div>

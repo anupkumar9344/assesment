@@ -42,34 +42,35 @@
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <form action="" method="post">
+                                <form action="add" method="post">
+                                    @csrf
                                     <div class="form-group">
                                         <label for="name" class="tc">Name</label><br>
                                         <input type="name" name="name" id="username" class="form-control">
                                     </div>
                                     <div class="form-group mt-2">
                                         <label for="email" class="tc">Email</label><br>
-                                        <input type="text" name="" id="" class="form-control">
+                                        <input type="text" name="email" id="email" class="form-control">
                                     </div>
                                     <div class="form-group mt-2">
                                         <label for="phone" class="tc">Phone</label><br>
-                                        <input type="text" name="" id="" class="form-control">
+                                        <input type="text" name="phone" id="phone" class="form-control">
                                     </div>
                                     <div class="form-group mt-2">
                                         <label for="address" class="tc">Address</label><br>
-                                        <input type="text" name="" id="" class="form-control">
+                                        <input type="text" name="address" id="address" class="form-control">
                                     </div>
                                     <div class="form-group mt-2">
                                         <label for="password" class="tc">Password</label><br>
-                                        <input type="password" name="" id="" class="form-control">
+                                        <input type="password" name="password" id="password" class="form-control">
                                     </div>
-
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btnc">Save changes</button>
+                                    </div>
                                 </form>
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
-                            </div>
+                           
                         </div>
                     </div>
                 </div>
@@ -87,57 +88,65 @@
                         <th scope="col">Update</th>
                         <th scope="col">Delete</th>
                     </tr>
+
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>Email</td>
-                        <td>@mdo</td>
-                        <td><button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                            data-bs-target="#exampleModal">
-                            edit
-                        </button></td>
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form action="" method="post">
-                                            <div class="form-group">
-                                                <label for="name" class="tc">Name</label><br>
-                                                <input type="name" name="name" id="username" class="form-control">
-                                            </div>
-                                            <div class="form-group mt-2">
-                                                <label for="email" class="tc">Email</label><br>
-                                                <input type="text" name="" id="" class="form-control">
-                                            </div>
-                                            <div class="form-group mt-2">
-                                                <label for="phone" class="tc">Phone</label><br>
-                                                <input type="text" name="" id="" class="form-control">
-                                            </div>
-                                            <div class="form-group mt-2">
-                                                <label for="address" class="tc">Address</label><br>
-                                                <input type="text" name="" id="" class="form-control">
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-bs-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
+                    @foreach ($users as $user)
+                        <tr>
+                            <th scope="row">{{ $user['id'] }}</th>
+                            <td>{{ $user['name'] }}</td>
+                            <td>{{ $user['phone'] }}</td>
+                            <td>{{ $user['email'] }}</td>
+                            <td>{{ $user['address'] }}</td>
+                            <td><button type="button" class="btn btnc" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">
+                                    <a class="btnc tc" href="#">edit</a>
+                                </button></td>
+                            <div class="modal fade " id="exampleModal" tabindex="-1"
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Update</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form action="/edit" method="post">
+                                                @csrf
+                                                {{ method_field('PUT') }}
+                                                <div class="form-group">
+                                                    <label for="name" class="tc">Name</label><br>
+                                                    <input type="name" name="name" id="name"
+                                                        value="{{ $user['name'] }}" class="form-control">
+                                                </div>
+                                                <div class="form-group mt-2">
+                                                    <label for="email" class="tc">Email</label><br>
+                                                    <input type="text" name="email" id="email" value="{{ $user['email'] }}" class="form-control">
+                                                </div>
+                                                <div class="form-group mt-2">
+                                                    <label for="phone" class="tc">Phone</label><br>
+                                                    <input type="text" name="phone" id="phone" value="{{ $user['phone'] }}" class="form-control">
+                                                </div>
+                                                <div class="form-group mt-2">
+                                                    <label for="address" class="tc">Address</label><br>
+                                                    <input type="text" name="address" id="address" value="{{ $user['address'] }}"
+                                                        class="form-control">
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btnc"
+                                                        data-bs-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                                </div>
+                                            </form>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <td>delete</td>
-                    </tr>
+                            <td><a class="btn btnc" href="{{ 'delete/' . $user['id'] }}">delete</a></td>
+                        </tr>
+                    @endforeach
 
                 </tbody>
             </table>

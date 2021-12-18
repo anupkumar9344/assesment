@@ -21,7 +21,7 @@ class UserController extends Controller
         $user->phone = $req->phone;
         $user->password = Hash::make($req->password);
         $user->save();
-        return redirect()->route('home');
+        return redirect()->route('/home');
     }
     // public function register(Request $req)
     // {
@@ -77,6 +77,38 @@ class UserController extends Controller
     //     return $table;
     // }
 
+    public function addUser(Request $req)
+    {
+        $user = new User;
+        $user ->name=$req->name;
+        $user ->email=$req->email;
+        $user ->user_type = 'user';
+        $user ->phone=$req->phone;
+        $user ->address=$req->address;
+        $user ->password=$req->password;
+        $user ->save();
+        return redirect('users');
+
+    }
+    public function showusers(){
+        $data =  User::all();
+        return view('admin.users', ['users'=>$data]);
+    }
+    public function show(){
+        $data =  User::all();
+        return view('admin.dashbord', ['users'=>$data]);
+    }
+   
+    public function delete($id){
+        $data=User::find($id);
+        $data->delete();
+        return redirect('users');
+    }
+    public function edit($id){
+
+        $data=User::find($id);
+        // return redirect('users');
+    }
     public function login(Request $request)
     {
         $this->validate($request, [
@@ -86,9 +118,14 @@ class UserController extends Controller
         $credential = $request->only('email', 'password');
 
         if (Auth::attempt($credential)) {
+            // dd(auth()->user()->user_type);
+            if(auth()->user()->user_type="admin")
+            {
+                return redirect()->intended('/dashbord');
+
+            }
             return redirect()->intended('/');
         } else {
-
             return back()->withInput($request->only('email', 'remember'));
         }
 

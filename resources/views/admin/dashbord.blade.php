@@ -16,7 +16,7 @@
                 <center>
                     <div class="card btnc">
                         <h4 class="pt-4">Total Users</h4>
-                        <h5 class="pb-3">50</h5>
+                        <h5 class="pb-3">{{ DB::table('users')->count(); }}</h5>
                     </div>
                 </center>
             </div>
@@ -24,7 +24,7 @@
                 <center>
                     <div class="card btnc">
                         <h4 class="pt-4">Total Category</h4>
-                        <h5 class="pb-3">50</h5>
+                        <h5 class="pb-3">{{ DB::table('category')->count(); }}</h5>
                     </div>
                 </center>
             </div>
@@ -32,7 +32,7 @@
                 <center>
                     <div class="card btnc">
                         <h4 class="pt-4">Total Products</h4>
-                        <h5 class="pb-3">50</h5>
+                        <h5 class="pb-3">{{ DB::table('products')->count(); }}</h5>
                     </div>
                 </center>
             </div>
@@ -49,23 +49,15 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($users as $user)
                         <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
+                            <th scope="row">{{$user['id']}}</th>
+                            <td>{{$user['name']}}</td>
+                            <td>{{$user['phone']}}</td>
+                            <td>{{$user['email']}}</td>
                         </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
+                        @endforeach
+                        
                     </tbody>
                 </table>
             </div>

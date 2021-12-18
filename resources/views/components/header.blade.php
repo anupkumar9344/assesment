@@ -28,10 +28,10 @@
             </button>
             <div class="collapse navbar-collapse text-white" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto">
-                    <a class="nav-link active text-white m-2 fw-500" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active text-white m-2 fw-500" aria-current="page" href="/">Home</a>
                     <a class="nav-link text-white m-2 fw-500" href="cart">My Cart</a>
-                    <a class="nav-link text-white m-2 fw-500" href="#">About</a>
-                    <a class="nav-link text-white m-2 fw-500" href="#">Contact</a>
+                    <a class="nav-link text-white m-2 fw-500" href="about">About</a>
+                    <a class="nav-link text-white m-2 fw-500" href="contact">Contact</a>
                     @if (Auth::user())
                         <a class="nav-link text-white m-2 fw-500" href="{{url('logout')}}">Logout</a>
                     @else

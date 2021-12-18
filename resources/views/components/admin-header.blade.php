@@ -24,7 +24,7 @@
             </button>
             <div class="collapse navbar-collapse text-white" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto">
-                    <a class="nav-link active text-white m-2 fw-500" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active text-white m-2 fw-500" aria-current="page" href="dashbord">Home</a>
                     <a class="nav-link text-white m-2 fw-500" href="users">Users</a>
                     <a class="nav-link text-white m-2 fw-500" href="category">Category</a>
                     <a class="nav-link text-white m-2 fw-500" href="products">Products</a>
